@@ -24,7 +24,4 @@ class UDPHelloClient(val address: String,
         val respPacket = DatagramPacket(buffer, buffer.size)
         socket.receive(respPacket)
     }
-
-    public override fun close() {
-    }
 }

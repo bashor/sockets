@@ -25,6 +25,4 @@ class TCPHelloClient(val address: String,
         input.readLine()
         socket?.close()
     }
-
-    public override fun close() {}
 }

@@ -7,7 +7,7 @@ import java.util.concurrent.CountDownLatch
 private val MAX_ERROR_COUNT = MESSAGE_COUNT * 2;
 abstract class HelloClient(val delay: () -> Long,
                            val startLatch: CountDownLatch,
-                           val stopLatch: CountDownLatch): Runnable, Closeable {
+                           val stopLatch: CountDownLatch): Runnable {
 
     val responseTime: ArrayList<Long> = ArrayList<Long>()
     abstract public fun send()

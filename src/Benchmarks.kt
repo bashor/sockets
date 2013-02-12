@@ -20,7 +20,6 @@ fun benchmark<T: HelloClient>(clientCount: Int,
     stopLatch.await()
 
     threads forEach { it.interrupt() }
-    clients forEach { it.close() }
 
     fun Collection<Long>.avg() = if (size == 0) 0 else fold(0: Long) { a, b -> a + b } / size
 
