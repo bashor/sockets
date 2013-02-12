@@ -1,11 +1,9 @@
 package helloserver.udp.server
 
-import helloserver.*
 import java.net.DatagramPacket
 import java.net.DatagramSocket
-import java.util.Random
 
-class UDPHelloServer(val port: Int, val delay: () -> Long) : Runnable {
+class UDPHelloServer(val port: Int, val delay: () -> Long): Runnable {
     override fun run() {
         val socket = DatagramSocket(port)
         while (true)

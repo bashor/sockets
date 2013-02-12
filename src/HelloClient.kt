@@ -1,13 +1,13 @@
 package helloserver
 
+import java.io.Closeable
 import java.util.ArrayList
 import java.util.concurrent.CountDownLatch
-import java.io.Closeable
 
-private val MAX_ERROR_COUNT = MESSAGE_COUNT*2;
+private val MAX_ERROR_COUNT = MESSAGE_COUNT * 2;
 abstract class HelloClient(val delay: () -> Long,
                            val startLatch: CountDownLatch,
-                           val stopLatch: CountDownLatch) : Runnable, Closeable {
+                           val stopLatch: CountDownLatch): Runnable, Closeable {
 
     val responseTime: ArrayList<Long> = ArrayList<Long>()
     abstract public fun send()

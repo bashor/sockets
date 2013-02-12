@@ -1,22 +1,16 @@
 package helloserver.udp.client
 
+import helloserver.*
 import java.net.DatagramPacket
 import java.net.DatagramSocket
 import java.net.InetAddress
-import java.util.ArrayList
-import helloserver.HelloClient
-import java.util.Random
-import kotlin.concurrent.thread
-import kotlin.concurrent.latch
-
-import helloserver.*
 import java.util.concurrent.CountDownLatch
 
 class UDPHelloClient(val address: String,
                      val port: Int,
                      delay: () -> Long,
                      startLatch: CountDownLatch,
-                     stopLatch: CountDownLatch) : HelloClient(delay, startLatch, stopLatch) {
+                     stopLatch: CountDownLatch): HelloClient(delay, startLatch, stopLatch) {
 
     var socket = DatagramSocket()
     val buffer = ByteArray(1024)
@@ -31,5 +25,6 @@ class UDPHelloClient(val address: String,
         socket.receive(respPacket)
     }
 
-    public override fun close() {}
+    public override fun close() {
+    }
 }

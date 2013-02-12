@@ -2,16 +2,13 @@ package helloserver
 
 import helloserver.*
 import helloserver.tcp.client.TCPHelloClient
-import java.util.Random
-import kotlin.concurrent.latch
-import kotlin.concurrent.thread
+import helloserver.tcp.server.TCPHelloServer
 import helloserver.udp.client.UDPHelloClient
 import helloserver.udp.server.UDPHelloServer
 import java.util.concurrent.CountDownLatch
-import helloserver.tcp.server.TCPHelloServer
 
 fun benchmark<T: HelloClient>(clientCount: Int,
-                                           clientCreator: (startLatch: CountDownLatch, stopLatch: CountDownLatch) -> T)
+                              clientCreator: (startLatch: CountDownLatch, stopLatch: CountDownLatch) -> T)
 {
     val startLatch = CountDownLatch(clientCount)
     val stopLatch = CountDownLatch(clientCount)
@@ -46,7 +43,7 @@ fun benchmark<S: Runnable, T: HelloClient>(serverCreator: () -> S,
 }
 
 fun main(args: Array<String>) {
-    val delay  = { delay(50, 150) }
+    val delay = { delay(50, 150) }
     val delay0 = { 0.toLong() }
 
     val tcpServer0 = { TCPHelloServer(TCP_PORT, delay0) }

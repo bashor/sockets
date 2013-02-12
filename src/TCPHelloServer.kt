@@ -1,10 +1,8 @@
 package helloserver.tcp.server
 
-import helloserver.*
-import java.util.Random
 import javax.net.ServerSocketFactory
 
-class TCPHelloServer(val port: Int, val delay: () -> Long) : Runnable {
+class TCPHelloServer(val port: Int, val delay: () -> Long): Runnable {
     override fun run() {
         val serverSocket = ServerSocketFactory.getDefault()!!.createServerSocket(port)
         while (true) {
