@@ -1,0 +1,71 @@
+========
+val MESSAGE_COUNT = 10
+val THREAD_MAX_COUNT = 101
+val THREAD_MIN_COUNT = 1
+val THREAD_STEP = 10
+========
+
+TCP server delay(0) | client delay(0)
+1	0
+11	5
+21	12
+31	20
+41	18
+51	24
+
+TCP server delay(50..150) | client delay(0)
+1	97
+11	1059
+21	2118
+31	3159
+41	4076
+51	5037
+-61	8084
+
+TCP server delay(50..150) | client delay(50..150)
+1	100
+11	968
+21	1996
+31	3048
+41	3988
+51	4941
+61	6256
+
+UDP server delay(0) | client delay(0)
+1	1
+11	1
+21	2
+31	11
+41	5
+51	6
+61	8
+71	9
+81	7
+91	12
+101	9
+
+UDP server delay(50..150) | client delay(0)
+1	102
+11	1060
+21	2094
+31	3138
+41	4201
+51	5240
+61	6280
+71	7343
+81	8402
+91	9434
+101	10484
+
+UDP server delay(50..150) | client delay(50..150)
+1	99
+11	964
+21	1992
+31	3041
+41	4105
+51	5133
+61	6203
+71	7231
+81	8279
+91	9327
+101	10379
